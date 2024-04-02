@@ -28,4 +28,20 @@ void manualAdd(Node* &root) {//adds the number manualy on the tree
     recurciveAdd(root, num);
   }
 }
+void recurciveAdd(Node* curr, int value) {//ading to the tree 
+  if (curr->data >= value && curr->getLeft() == NULL) {//curr is greater than value and its left is empty
+    curr->setLeft(new Node(value));
+    curr->getLeft()->parent = curr;
+  }
+  else if (curr->data < value && curr->getRight() == NULL) {// curr is less than value and its right is empty
+    curr->setRight(new Node(value));
+    curr->getRight()->parent = curr;
+  }
+  else if (curr->data >= value) {//currs data is greater than the value still
+    recurciveAdd(curr->getLeft(), value);
+  }
+  else if (curr->data < value) {// currs data is less than the value still
+    recurciveAdd(curr->getRight(), value);
+  }
+}
 
