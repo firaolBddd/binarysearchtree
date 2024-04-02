@@ -1,7 +1,7 @@
 //Firaol Berehanu
 // march 16 2024
 //This is a binary search tree wich have children and u can add remove or print 
-
+//used help from my uncle and a bit of stack overflow
 //inlducde stuff
 #include "node.h"
 #include <fstream>
